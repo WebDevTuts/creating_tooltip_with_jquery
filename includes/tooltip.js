@@ -14,7 +14,13 @@ $(document).ready(function(){
       $('#tooltip_container').html( newHTML );
     }
 
-  }).mouse.move(function(e){
+  }).mousemove(function(e){
+
+    var toolTipWidth = $('#tooltip_container').outerWidth();
+    var tootTipHeight = $('#tooltip_container').outerHeight();
+
+    $('#tooltip_container').css('left',(e.pageX-20)+'px');
+    $('#tooltip_container').css('top',(e.pageY+20)+'px');
 
   }).mouseout(function(e){
 
