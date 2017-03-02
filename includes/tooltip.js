@@ -19,7 +19,13 @@ $(document).ready(function(){
     var toolTipWidth = $('#tooltip_container').outerWidth();
     var tootTipHeight = $('#tooltip_container').outerHeight();
 
-    $('#tooltip_container').css('left',(e.pageX-20)+'px');
+    var pageWidth = $('body').width();
+    if ( e.pageX > pageWidth/2 ) {
+      $('#tooltip_container').css('left',(e.pageX-toolTipWidth+20)+'px');
+    } else {
+      $('#tooltip_container').css('left',(e.pageX-20)+'px');      
+    }
+
     $('#tooltip_container').css('top',(e.pageY+20)+'px');
 
   }).mouseout(function(e){
