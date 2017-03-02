@@ -33,7 +33,7 @@ $(document).ready(function(){
     }
 
   }).mouseout(function(e){
-
+    $('#tooltip_container').css('display','none').html('');
   });
 
 });
