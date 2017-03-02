@@ -26,7 +26,11 @@ $(document).ready(function(){
       $('#tooltip_container').css('left',(e.pageX-20)+'px');      
     }
 
-    $('#tooltip_container').css('top',(e.pageY+20)+'px');
+    if( e.pageY > 100 ) {
+      $('#tooltip_container').css('top',(e.pageY-toolTipHeight+20)+'px');
+    } else {
+      $('#tooltip_container').css('top',(e.pageY+20)+'px');
+    }
 
   }).mouseout(function(e){
 
